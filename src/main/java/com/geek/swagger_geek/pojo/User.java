@@ -3,7 +3,13 @@ package com.geek.swagger_geek.pojo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-//@Api(注释)
+/**
+ * 只要接口中存在实体类，就会被扫描到 Swagger 中。
+ * // @Api(注释)
+ * // @Models
+ *
+ * @author geek
+ */
 @ApiModel("用户实体类")
 public class User {
 

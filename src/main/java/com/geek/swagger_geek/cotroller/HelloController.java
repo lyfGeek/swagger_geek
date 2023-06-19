@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author geek
+ */
 @RestController
 public class HelloController {
 
@@ -15,24 +18,36 @@ public class HelloController {
         return "hello";
     }
 
-    // 只要接口中存在实体类，就会被扫描到 Swagger 中。
-//    Models
+    /**
+     * @return
+     */
     @PostMapping("/user")
     public User user() {
         return new User();
     }
 
-    // operation。接口。不是放在类上的。
+    /**
+     * operation。接口。不是放在类上的。
+     *
+     * @param username
+     * @return
+     */
     @ApiOperation("Hello 控制类。")
     @GetMapping("/hello2")
     public String hello2(@ApiParam("用户名") String username) {
         return "hello" + username;
     }
 
-    // operation。接口。不是放在类上的。
+    /**
+     * operation。接口。不是放在类上的。
+     *
+     * @param user
+     * @return
+     */
     @ApiOperation("POST 测试。")
-    @PostMapping("/postt")
+    @PostMapping("/post")
     public User hello3(@ApiParam("用户名") User user) {
         return user;
     }
+
 }
